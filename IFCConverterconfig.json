@@ -1,0 +1,5 @@
+{
+	"conversionTypes" : ["obj", "stl"],
+    "geometryOperations" : ["UseWorldCoords", "SewShells"],
+    "exclude" :["ifcopeningelement", "ifcspace"]
+}
