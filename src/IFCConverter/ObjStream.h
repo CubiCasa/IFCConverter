@@ -39,5 +39,4 @@ private:
 	std::ofstream geometryStream;
 	std::ofstream materialStream;
 	std::vector<ObjMaterial> createdMaterials;
-
 };

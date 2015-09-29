@@ -25,15 +25,15 @@ public:
 	virtual void writeMesh(const std::string& meshName, const std::vector<double>& vertices, const std::vector<double>& normals, const std::vector<int>& indices, const std::vector<IfcGeom::Material>& materials) {}
 	virtual void close() {}
 protected:
-    std::string parseFileName(const std::string& filePath)
-    {
-        std::string str = filePath;
-        const int lastSlash = str.find_last_of("\\/");
-        if(std::string::npos != lastSlash)
-        {
-            str.erase(0, lastSlash + 1);
-        }
-        return str;
-    }
+	std::string parseFileName(const std::string& filePath)
+	{
+		std::string str = filePath;
+		const int lastSlash = str.find_last_of("\\/");
+		if(std::string::npos != lastSlash)
+		{
+			str.erase(0, lastSlash + 1);
+		}
+		return str;
+	}
 	std::string name;
 };

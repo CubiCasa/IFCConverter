@@ -68,7 +68,6 @@ void printUsage() {
 		<< "2. Name of the output file, without file extension" << std::endl
 		<< "3. config file" << std::endl
 		<< std::endl;
-
 }
 
 bool parseConfigFile(char* fileName, ConversionData& conversionData)
@@ -76,39 +75,39 @@ bool parseConfigFile(char* fileName, ConversionData& conversionData)
 	if (!fileName)
 		return false;
 
-    std::ifstream ifs(fileName);
-    bool success = true;
+	std::ifstream ifs(fileName);
+	bool success = true;
 
-    if(ifs)
-    {
-        std::string fileContent((std::istreambuf_iterator<char>(ifs)), (std::istreambuf_iterator<char>()));
-        cJSON* cJSONroot = cJSON_Parse(fileContent.c_str());
-        if(!cJSONroot)
-        {
-            std::cout << "Failed to parse config file. Error before: " << cJSON_GetErrorPtr() << std::endl;
+	if(ifs)
+	{
+		std::string fileContent((std::istreambuf_iterator<char>(ifs)), (std::istreambuf_iterator<char>()));
+		cJSON* cJSONroot = cJSON_Parse(fileContent.c_str());
+		if(!cJSONroot)
+		{
+			std::cout << "Failed to parse config file. Error before: " << cJSON_GetErrorPtr() << std::endl;
 			success = false;
-        }
-        else
-        {
-            cJSON* conversionTypes = cJSON_GetObjectItem(cJSONroot, "conversionTypes");
-            cJSON* geometryOperations = cJSON_GetObjectItem(cJSONroot, "geometryOperations");
+		}
+		else
+		{
+			cJSON* conversionTypes = cJSON_GetObjectItem(cJSONroot, "conversionTypes");
+			cJSON* geometryOperations = cJSON_GetObjectItem(cJSONroot, "geometryOperations");
 			cJSON* exclude = cJSON_GetObjectItem(cJSONroot, "exclude");
 			cJSON* include = cJSON_GetObjectItem(cJSONroot, "include");
 
-            if(conversionTypes)
-            {
-                for(int i = 0; i < cJSON_GetArraySize(conversionTypes); i++)
-                {
-                    conversionData.conversionTypes.push_back(enumFromString<ConversionType>(cJSON_GetArrayItem(conversionTypes, i)->valuestring));
-                }
-            }
-            if(geometryOperations)
-            {
-                for(int i = 0; i < cJSON_GetArraySize(geometryOperations); i++)
-                {
+			if(conversionTypes)
+			{
+				for(int i = 0; i < cJSON_GetArraySize(conversionTypes); i++)
+				{
+					conversionData.conversionTypes.push_back(enumFromString<ConversionType>(cJSON_GetArrayItem(conversionTypes, i)->valuestring));
+				}
+			}
+			if(geometryOperations)
+			{
+				for(int i = 0; i < cJSON_GetArraySize(geometryOperations); i++)
+				{
 					conversionData.geometryOperations.push_back(enumFromString<GeometryOperations>(cJSON_GetArrayItem(geometryOperations, i)->valuestring));
-                }
-            }
+				}
+			}
 			if (exclude)
 			{
 				for (int i = 0; i < cJSON_GetArraySize(exclude); i++)
@@ -123,34 +122,34 @@ bool parseConfigFile(char* fileName, ConversionData& conversionData)
 					conversionData.excludeEntities.insert(cJSON_GetArrayItem(include, i)->valuestring);
 				}
 			}
-        }
-        cJSON_Delete(cJSONroot);
-    }
+		}
+		cJSON_Delete(cJSONroot);
+	}
 	else
 	{
 		std::cout << "Failed to open config file " << fileName << std::endl;
 		success = false;
 	}
 
-    return success;
+	return success;
 }
 
 bool parseArgs(int argc, char** argv, ConversionData& conversionData)
 {
-    bool succeed = false;
-    if(argc == numArgs)
-    {
-        conversionData.input = argv[1];
+	bool succeed = false;
+	if(argc == numArgs)
+	{
+		conversionData.input = argv[1];
 		conversionData.ouput = argv[2];
 
-        succeed = parseConfigFile( argv[3], conversionData);
-    }
+		succeed = parseConfigFile( argv[3], conversionData);
+	}
 	else
 	{
 		printUsage();
 	}
 
-    return succeed;
+	return succeed;
 }
 
 void convert(const ConversionData& conversionData)
@@ -192,13 +191,13 @@ void convert(const ConversionData& conversionData)
 	{
 		switch (type)
 		{
-		    case ConversionType::obj:
-		    {
+			case ConversionType::obj:
+			{
 				conversionStreams.push_back(new ObjStream(std::string(conversionData.ouput)));
-			    break;
-		    }
+				break;
+			}
 			case ConversionType::stl:
-                conversionStreams.push_back(new StlStream(std::string(conversionData.ouput)));
+				conversionStreams.push_back(new StlStream(std::string(conversionData.ouput)));
 				break;
 		}
 	}
@@ -252,8 +251,8 @@ void convert(const ConversionData& conversionData)
 
 int main(int argc, char** argv) {
    
-    ConversionData conversionData;
-    bool succeed = parseArgs(argc, argv, conversionData);
+	ConversionData conversionData;
+	bool succeed = parseArgs(argc, argv, conversionData);
 
 	if (!succeed)
 	{
@@ -261,7 +260,7 @@ int main(int argc, char** argv) {
 		return 1;
 	}
 
-    convert(conversionData);
+	convert(conversionData);
 
 	return 0;
 }
