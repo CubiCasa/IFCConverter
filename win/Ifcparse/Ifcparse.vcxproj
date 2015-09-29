@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{4E3EACED-EA1A-40BF-B441-2374A2C5D130}</ProjectGuid>
+    <RootNamespace>Ifcparse</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\..\lib\debug\</OutDir>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\..\lib\release\</OutDir>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(BOOST_ROOT)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(BOOST_ROOT)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\ifcparse\Ifc2x3-latebound.cpp" />
+    <ClCompile Include="..\..\src\ifcparse\Ifc2x3.cpp" />
+    <ClCompile Include="..\..\src\ifcparse\Ifc4-latebound.cpp" />
+    <ClCompile Include="..\..\src\ifcparse\Ifc4.cpp" />
+    <ClCompile Include="..\..\src\ifcparse\IfcCharacterDecoder.cpp" />
+    <ClCompile Include="..\..\src\ifcparse\IfcGlobalId.cpp" />
+    <ClCompile Include="..\..\src\ifcparse\IfcHierarchyHelper.cpp" />
+    <ClCompile Include="..\..\src\ifcparse\IfcLateBoundEntity.cpp" />
+    <ClCompile Include="..\..\src\ifcparse\IfcParse.cpp" />
+    <ClCompile Include="..\..\src\ifcparse\IfcSIPrefix.cpp" />
+    <ClCompile Include="..\..\src\ifcparse\IfcSpfHeader.cpp" />
+    <ClCompile Include="..\..\src\ifcparse\IfcUtil.cpp" />
+    <ClCompile Include="..\..\src\ifcparse\IfcWrite.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\ifcparse\Ifc2x3-latebound.h" />
+    <ClInclude Include="..\..\src\ifcparse\Ifc2x3.h" />
+    <ClInclude Include="..\..\src\ifcparse\Ifc2x3enum.h" />
+    <ClInclude Include="..\..\src\ifcparse\Ifc4-latebound.h" />
+    <ClInclude Include="..\..\src\ifcparse\Ifc4.h" />
+    <ClInclude Include="..\..\src\ifcparse\Ifc4enum.h" />
+    <ClInclude Include="..\..\src\ifcparse\IfcCharacterDecoder.h" />
+    <ClInclude Include="..\..\src\ifcparse\IfcEntityDescriptor.h" />
+    <ClInclude Include="..\..\src\ifcparse\IfcException.h" />
+    <ClInclude Include="..\..\src\ifcparse\IfcFile.h" />
+    <ClInclude Include="..\..\src\ifcparse\IfcGlobalId.h" />
+    <ClInclude Include="..\..\src\ifcparse\IfcHierarchyHelper.h" />
+    <ClInclude Include="..\..\src\ifcparse\IfcLateBoundEntity.h" />
+    <ClInclude Include="..\..\src\ifcparse\IfcParse.h" />
+    <ClInclude Include="..\..\src\ifcparse\IfcSIPrefix.h" />
+    <ClInclude Include="..\..\src\ifcparse\IfcSpfHeader.h" />
+    <ClInclude Include="..\..\src\ifcparse\IfcSpfStream.h" />
+    <ClInclude Include="..\..\src\ifcparse\IfcUtil.h" />
+    <ClInclude Include="..\..\src\ifcparse\IfcWritableEntity.h" />
+    <ClInclude Include="..\..\src\ifcparse\IfcWrite.h" />
+    <ClInclude Include="..\..\src\ifcparse\SharedPointer.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="..\..\src\ifcgeom\IfcGeom.h" />
+    <ClInclude Include="..\..\src\ifcgeom\IfcGeomElement.h" />
+    <ClInclude Include="..\..\src\ifcgeom\IfcGeomIterator.h" />
+    <ClInclude Include="..\..\src\ifcgeom\IfcGeomIteratorSettings.h" />
+    <ClInclude Include="..\..\src\ifcgeom\IfcGeomMaterial.h" />
+    <ClInclude Include="..\..\src\ifcgeom\IfcGeomRenderStyles.h" />
+    <ClInclude Include="..\..\src\ifcgeom\IfcGeomRepresentation.h" />
+    <ClInclude Include="..\..\src\ifcgeom\IfcGeomShapeType.h" />
+    <ClInclude Include="..\..\src\ifcgeom\IfcRegister.h" />
+    <ClInclude Include="..\..\src\ifcgeom\IfcRegisterConvertCurve.h" />
+    <ClInclude Include="..\..\src\ifcgeom\IfcRegisterConvertFace.h" />
+    <ClInclude Include="..\..\src\ifcgeom\IfcRegisterConvertShape.h" />
+    <ClInclude Include="..\..\src\ifcgeom\IfcRegisterConvertShapes.h" />
+    <ClInclude Include="..\..\src\ifcgeom\IfcRegisterConvertWire.h" />
+    <ClInclude Include="..\..\src\ifcgeom\IfcRegisterCreateCache.h" />
+    <ClInclude Include="..\..\src\ifcgeom\IfcRegisterDef.h" />
+    <ClInclude Include="..\..\src\ifcgeom\IfcRegisterGeomHeader.h" />
+    <ClInclude Include="..\..\src\ifcgeom\IfcRegisterPurgeCache.h" />
+    <ClInclude Include="..\..\src\ifcgeom\IfcRegisterShapeType.h" />
+    <ClInclude Include="..\..\src\ifcgeom\IfcRegisterUndef.h" />
+    <ClInclude Include="..\..\src\ifcgeom\IfcRepresentationShapeItem.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\ifcgeom\IfcGeomCurves.cpp" />
+    <ClCompile Include="..\..\src\ifcgeom\IfcGeomFaces.cpp" />
+    <ClCompile Include="..\..\src\ifcgeom\IfcGeomFunctions.cpp" />
+    <ClCompile Include="..\..\src\ifcgeom\IfcGeomHelpers.cpp" />
+    <ClCompile Include="..\..\src\ifcgeom\IfcGeomMaterial.cpp" />
+    <ClCompile Include="..\..\src\ifcgeom\IfcGeomRenderStyles.cpp" />
+    <ClCompile Include="..\..\src\ifcgeom\IfcGeomRepresentation.cpp" />
+    <ClCompile Include="..\..\src\ifcgeom\IfcGeomShapes.cpp" />
+    <ClCompile Include="..\..\src\ifcgeom\IfcGeomWires.cpp" />
+    <ClCompile Include="..\..\src\ifcgeom\IfcRegister.cpp" />
+  </ItemGroup>
+</Project>

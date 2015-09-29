@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DBB3F7C6-9A55-4583-887E-1BE3393E97A5}</ProjectGuid>
+    <RootNamespace>Ifcgeom</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\..\lib\debug\</OutDir>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\..\lib\release\</OutDir>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(BOOST_ROOT);$(OCE_ROOT)\include\oce\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>__CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(BOOST_ROOT);$(OCE_ROOT)\include\oce\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\ifcgeom\IfcGeom.h" />
+    <ClInclude Include="..\..\src\ifcgeom\IfcGeomElement.h" />
+    <ClInclude Include="..\..\src\ifcgeom\IfcGeomIterator.h" />
+    <ClInclude Include="..\..\src\ifcgeom\IfcGeomIteratorSettings.h" />
+    <ClInclude Include="..\..\src\ifcgeom\IfcGeomMaterial.h" />
+    <ClInclude Include="..\..\src\ifcgeom\IfcGeomRenderStyles.h" />
+    <ClInclude Include="..\..\src\ifcgeom\IfcGeomRepresentation.h" />
+    <ClInclude Include="..\..\src\ifcgeom\IfcGeomShapeType.h" />
+    <ClInclude Include="..\..\src\ifcgeom\IfcRegister.h" />
+    <ClInclude Include="..\..\src\ifcgeom\IfcRegisterConvertCurve.h" />
+    <ClInclude Include="..\..\src\ifcgeom\IfcRegisterConvertFace.h" />
+    <ClInclude Include="..\..\src\ifcgeom\IfcRegisterConvertShape.h" />
+    <ClInclude Include="..\..\src\ifcgeom\IfcRegisterConvertShapes.h" />
+    <ClInclude Include="..\..\src\ifcgeom\IfcRegisterConvertWire.h" />
+    <ClInclude Include="..\..\src\ifcgeom\IfcRegisterCreateCache.h" />
+    <ClInclude Include="..\..\src\ifcgeom\IfcRegisterDef.h" />
+    <ClInclude Include="..\..\src\ifcgeom\IfcRegisterGeomHeader.h" />
+    <ClInclude Include="..\..\src\ifcgeom\IfcRegisterPurgeCache.h" />
+    <ClInclude Include="..\..\src\ifcgeom\IfcRegisterShapeType.h" />
+    <ClInclude Include="..\..\src\ifcgeom\IfcRegisterUndef.h" />
+    <ClInclude Include="..\..\src\ifcgeom\IfcRepresentationShapeItem.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\ifcgeom\IfcGeomCurves.cpp" />
+    <ClCompile Include="..\..\src\ifcgeom\IfcGeomFaces.cpp" />
+    <ClCompile Include="..\..\src\ifcgeom\IfcGeomFunctions.cpp" />
+    <ClCompile Include="..\..\src\ifcgeom\IfcGeomHelpers.cpp" />
+    <ClCompile Include="..\..\src\ifcgeom\IfcGeomMaterial.cpp" />
+    <ClCompile Include="..\..\src\ifcgeom\IfcGeomRenderStyles.cpp" />
+    <ClCompile Include="..\..\src\ifcgeom\IfcGeomRepresentation.cpp" />
+    <ClCompile Include="..\..\src\ifcgeom\IfcGeomShapes.cpp" />
+    <ClCompile Include="..\..\src\ifcgeom\IfcGeomWires.cpp" />
+    <ClCompile Include="..\..\src\ifcgeom\IfcRegister.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

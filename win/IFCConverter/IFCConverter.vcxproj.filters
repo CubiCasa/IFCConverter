@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="cJSON">
+      <UniqueIdentifier>{bc03880c-7313-475c-a812-add1e8a34f94}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\IFCConverter\EnumClassDeclaration.h" />
+    <ClInclude Include="..\..\src\IFCConverter\ObjStream.h" />
+    <ClInclude Include="..\..\src\IFCConverter\StlStream.h" />
+    <ClInclude Include="..\..\src\IFCConverter\Stream.h" />
+    <ClInclude Include="..\..\src\cJSON\cJSON.h">
+      <Filter>cJSON</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\IFCConverter\Main.cpp" />
+    <ClCompile Include="..\..\src\IFCConverter\ObjStream.cpp" />
+    <ClCompile Include="..\..\src\IFCConverter\StlStream.cpp" />
+    <ClCompile Include="..\..\src\cJSON\cJSON.c">
+      <Filter>cJSON</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
